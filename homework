@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	
+		<title>canvas绘图</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<script type="text/javascript">
+			
+			var c=document.getElementById("myCanvas");
+			var ctx=c.getContext("2d");
+			/**
+			 * 
+			 * 绘制圆，从外圈开始画，每个中间要重新begainPath一次。
+			 */
+			ctx.beginPath();
+			ctx.arc(250,250,250,0,2*Math.PI);//参数依次为圆心坐标x,y，半径，开始结束角，绘制方向顺时针
+			ctx.stroke();
+			ctx.fillStyle="rgb(6,40,90)";//设置填充颜色
+			ctx.fill();//开始填充
+			
+			ctx.beginPath();
+			ctx.arc(250,300,200,0,2*Math.PI);//参数依次为圆心坐标x,y，半径，开始结束角，绘制方向顺时针
+			ctx.stroke();
+			ctx.fillStyle="rgb(38,99,200)";//设置填充颜色
+			ctx.fill();//开始填充
+			
+			
+			ctx.beginPath();
+			ctx.arc(250,350,150,0,2*Math.PI);//参数依次为圆心坐标x,y，半径，开始结束角，绘制方向顺时针
+			ctx.stroke();
+			ctx.fillStyle="rgb(199,202,211)";//设置填充颜色
+			ctx.fill();//开始填充
+			
+			
+			ctx.beginPath();
+			ctx.arc(250,400,100,0,2*Math.PI);//参数依次为圆心坐标x,y，半径，开始结束角，绘制方向顺时针
+			ctx.stroke();
+			ctx.fillStyle="rgb(38,99,200)";//设置填充颜色
+			ctx.fill();//开始填充
+			
+			/**
+			 * 
+			 * 绘制文字
+			 */
+			ctx.beginPath();
+			
+			/*与css的font相同文本字体，可设置字体样
+			式的任何值，如font style，font weight，
+			font size，font face等，该属性的值是CSS3字体字符串
+			*/
+			
+			ctx.font='bold 35px Arial';
+			
+			/*
+			文本参照X轴坐标如何进行水平对齐。取值：start， end，left，right，center，默认值为start
+			*/
+			ctx.textAlign = 'center';
+			
+			/**
+			 * textBaseline
+			 * 文本参照Y轴坐标如何进行垂直对齐。
+			 * 取值：top，middle，alphabetic，ideographic，bottom，
+			 * 默认值：alphabetic
+			 */
+			
+			/**
+			 * 调用一次fillText()或strokeText()方法，只能绘制一行文本，如果要绘制多行文本，需要调用多次。
+			 */
+			ctx.fillStyle = 'red';
+			ctx.fillText("文本1", 250, 50);
+			
+			ctx.beginPath();
+			ctx.font='bold 35px Arial';
+			ctx.textAlign = 'center';
+			ctx.fillStyle = 'yellow';
+			ctx.fillText("文本2", 250, 150);
+			
+			ctx.beginPath();
+			ctx.font='bold 35px Arial';
+			ctx.textAlign = 'center';
+			ctx.fillStyle = 'green';
+			ctx.fillText("文本3", 250, 250);
+			
+			ctx.beginPath();
+			ctx.font='bold 35px Arial';
+			ctx.textAlign = 'center';
+			ctx.fillStyle = 'brown';
+			ctx.fillText("文本4", 250, 350);
+		</script>
+	</body>
+</html>
